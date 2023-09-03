@@ -7,7 +7,7 @@ const WeatherCard = ({ weatherData }) => {
             <br />
             Country: {weatherData?.sys?.country}
             <br />
-            temperature: {weatherData?.main?.temp}°C
+            Temperature: {weatherData?.main?.temp}°C
             <br />
             Humidity: {weatherData?.main?.humidity}
             <br />
