@@ -3,17 +3,17 @@ import "./weatherwidget.css";
 const WeatherCard = ({ weatherData }) => {
     return (
         <div className="card">
-            City Name: {weatherData?.name}
+            <div className="city">{weatherData?.name}</div>
             <br />
-            Country: {weatherData?.sys?.country}
+            <div className="country">{weatherData?.sys?.country}</div>
             <br />
-            Temperature: {weatherData?.main?.temp}°C
+            <div className="temp">{weatherData?.main?.temp}°C</div>
             <br />
-            Humidity: {weatherData?.main?.humidity}
+            <div className="humidity">{weatherData?.main?.humidity}</div>
             <br />
-            Wind Speed: {weatherData?.wind?.speed}
+            <div className="wind">{weatherData?.wind?.speed}</div>
             <br />
-            Weather: {weatherData?.weather[0]?.description}
+            <div className="weather">{weatherData?.weather[0]?.description}</div>
             
         </div>
     );

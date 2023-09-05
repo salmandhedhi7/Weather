@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import WeatherCard from "../weatherwidget/weatherwidget";
+import "./home.css"
 
 
 const Home = () => {
@@ -55,7 +56,7 @@ const Home = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log("cityName: ", cityNameRef.current.value);
+        // console.log("cityName: ", cityNameRef.current.value);
 
         let API_KEY = "e0f99c494c2ce394a18cc2fd3f100543";
 
@@ -79,26 +80,33 @@ const Home = () => {
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
-                <label htmlFor="cityNameInput">City Name:</label>
+            
+      <div className="head bg-[#171d2501] flex flex-col justify-right items-center gap-[1em] sticky top-0 z-20">
+      <h1 className="z-[30] mb-[1em] flex justify-center itens-center gap-[0.5em] text-center w-[100%] text-[#fec55e] bi bi-cloud-sun text-[1.5em]"><span className="text-[#fff]">Weather</span><span className="text-[#ff6677]">App</span></h1>
+     
+            <form onSubmit={submitHandler} className="z-[30] mb-[1em] w-[100%] flex justify-center items-center gap[1em] bg-[#fff] p-[0.5em] rounded-[15px]">
                 <input  
                  id="cityNameInput"
                  type="text"
                  required
-                 minLength={3}
-                 maxLength={25} 
+                 minLength={2}
+                 maxLength={20} 
                  ref={cityNameRef}
+                 className="bg-[#fff] p-[0.5em] w-[100%]"
+                 placeholder="Enter City Name"
                  />
 
                  <br />
 
 
-                 <button type="submit">Get Weather</button>
+                 <button type="submit" className="text-[#fff] bg-[#ff6677] p-[0.5em] rounded-[10px]">Search</button>
             </form>
+            </div>
 
             <hr />
 
-            {isloading ? <div>Loading...</div> : null}
+            <div className="result p-[1em] w-[100%] flex flex-wrap justify-center items-start h-[100%]" >
+
 
 
             {weatherData.length || currentLocationWeather || isloading ? null : <div>No Data</div>}
@@ -110,6 +118,7 @@ const Home = () => {
 
 
             {currentLocationWeather ? <WeatherCard weatherData={currentLocationWeather} /> : null}
+            </div>
         </div>
     );
 };

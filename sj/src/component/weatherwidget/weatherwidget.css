@@ -1,11 +1,36 @@
-.card {
-    /* border: 1px solid black; */
+.card{
     margin: 2rem;
     padding: 1.5rem;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 10px;
+    background-color: rgb(108, 255, 255);
+    border-radius: 10px;
+    min-width: 15em;
+    max-width: 20em;
+    min-height: 20em;
+}
+
+.city{
+    font-size: 2rem;
 }
 
 
-.temp {
+.country{
+    font-size: 2rem;
+}
+
+.temp{
+    font-size: 2rem;
+}
+
+.humidity{
+    font-size: 2rem;
+}
+
+.wind{
+    font-size: 2rem;
+}
+
+.weather{
     font-size: 2rem;
 }
